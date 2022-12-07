@@ -5,6 +5,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+print("StartingProgram...")
+
 database = DatabaseConnection.DatabaseConnection(
     os.getenv('USERNAME'), 
     os.getenv('PASSWORD'), 
@@ -13,4 +15,5 @@ database = DatabaseConnection.DatabaseConnection(
     os.getenv('DATABASE')
 )
 
+print(f"Is database available: {database.available()}")
 print(database.get_products())

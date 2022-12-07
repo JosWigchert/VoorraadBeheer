@@ -23,8 +23,6 @@ class DatabaseConnection:
             self.good = False
             self.error = e
             
-            sys.exit(1)
-
     def available(self):
         if not self.good:
             print(f"Error connecting to MariaDB Platform: {self.error}")
