@@ -1,4 +1,6 @@
-from Database import DatabaseConnection, IngredientsRepository
+from Database.DatabaseConnection import DatabaseConnection
+from Database.IngredientRepository import IngredientRepository
+from Database.ProductRepository import ProductRepository
 
 from PyQt6.QtWidgets import QApplication, QLabel, QWidget
 import PyQt6

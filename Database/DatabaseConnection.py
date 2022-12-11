@@ -9,18 +9,16 @@ class DatabaseConnection:
         self.host = host
         self.port = port
         self.database = database
-        self.good = True
+        self.good: bool = True
         
         try:
-            self.connection = mariadb.connect(
+            self.connection: mariadb.Connection = mariadb.connect(
                 user=self.username,
                 password=self.password,
                 host=self.host,
                 port=self.port,
                 database=self.database
             )
-
-            self.cursor = self.connection.cursor()
         except mariadb.Error as e:
             self.good = False
             self.error = e

@@ -1,3 +1,4 @@
+DELIMITER ;;
 
 CREATE PROCEDURE `AddProduct`(IN `param_product` varchar(100), IN `param_amount` int)
 BEGIN
@@ -7,13 +8,13 @@ END;;
 
 CREATE PROCEDURE `GetProduct`(IN `param_product` varchar(100))
 BEGIN
-    SELECT Id, Product, Amount, FROM tblProduct
+    SELECT Id, Product, Amount FROM tblProduct
     WHERE Product = param_product;
 END;;
 
 CREATE PROCEDURE `GetProducts`()
 BEGIN
-    SELECT Id, Product, Amount, FROM tblProduct;
+    SELECT Id, Product, Amount FROM tblProduct;
 END;;
 
 CREATE PROCEDURE `ProductExists`(IN `param_product` varchar(100))
